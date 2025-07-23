@@ -1,5 +1,10 @@
 # Tutorial_nnUNet
 
+<p align="center">
+  <img src="Images/schema.png" alt="masque" width="500"/>
+</p>  
+
+----
 
 ## 📚 Sommaire
 
@@ -31,10 +36,13 @@ Avant d’utiliser nnU-Net, il faut que les masques de segmentation soient bien 
 ⚠️ le label 0 correspond au background (obligatoire pour nnU-Net)  
 
 Pour réaliser la partie background, il faut aller dans la section *Data* de 3D Slicer puis, clique droit sur le masque et cliquer sur *Export visible segments to binary label map*.    
-Une fois cela fait, aller dans la section *Segment editor* et dans *Source Volume*, chargé ce nouveau masque binaire qui vient dêtre généré.     
-METTRE UN EXEMPLE DE MASQUE BINAIRE  
-Ensuite, utiliser l'outil *Threshold* et cliquer sur une zone qui ne contient pas de pixels appartenant au masque (une zone noire) et cliquer sur *Apply*.    
-Pour finir, renommer ce nouveau segment en *background*.
+Une fois cela fait, aller dans la section *Segment editor* et dans *Source Volume*, chargé ce nouveau masque binaire qui vient dêtre généré :      
+<p align="center">
+  <img src="Images/exemple_masque.png" alt="masque" width="500"/>
+</p>  
+
+Ensuite, utiliser l'outil *Threshold* et cliquer sur une zone qui ne contient pas de pixels appartenant au masque (dans la zone verte sur l'exemple) et cliquer sur *Apply*.    
+Pour finir, renommer ce nouveau segment *background*. 
 
 ---
 # Étape 1️⃣ - Organisation des données
