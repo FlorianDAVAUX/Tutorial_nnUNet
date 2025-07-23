@@ -1,12 +1,8 @@
 # Tutorial_nnUNet
 
 <p align="center">
-  <img src="Images/schema.png" alt="schema" width="500"/>
+  <img src="Images/schema.png" alt="schema" width="1000"/>
 </p>  
-
-<p align="center">
-  <img src="Images/schema.png" alt="schema" width="500"/>
-</p>
 
 ---
 
