@@ -22,7 +22,7 @@ Une fois que l'extension est téléchargée il faut l'intégrer dans 3D Slicer :
 - Ouvrir **3D SLicer**
 - Ouvrir **Edit**
 - Ouvrir **Application settings**
-- Cliquer sur **Module** et obeserver l'élément **Additional module paths:** de cet onglet
+- Cliquer sur **Module** et observer l'élément **Additional module paths:** de cet onglet
 - Ajouter dans module le chemin vers **LungSegmentation**  
 ⚠️ Il faut ajouter le chemin vers le dossier **LungSegmentation**, pas le chemin vers l'extension complète **SlicerLungSegmentation**.
 - Relancer **3D Slicer**
