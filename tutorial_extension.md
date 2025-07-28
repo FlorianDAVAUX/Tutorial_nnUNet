@@ -16,9 +16,20 @@
 # Étape 0️⃣ – Téléchargement du depôt
 
 Premièrement il faut télécharger ce dépot : [LungSegmentation](https://github.com/FlorianDAVAUX/SlicerLungSegmentation)
+```
+git clone https://github.com/FlorianDAVAUX/SlicerLungSegmentation.git
+```
+---
 
+# Étape 1️⃣ - Intégration dans 3D Slicer
 
-# Étape 1️⃣ - Organisation des données
+Une fois que l'extension est téléchargée il faut l'intégrer dans 3D Slicer :
+- Ouvrir **3D SLicer**
+- Ouvrir **Edit**
+- Ouvrir **Application settings**
+- Cliquer sur **Module** et obeserver l'élément **Additional module paths:** de cet onglet
+- Ajouter dans module le chemin vers **LungSegmentation**  
+Il faut ajouter le chemin vers le dossier **LungSegmentation**, pas le chemin vers l'extension complète **SlicerLungSegmentation**
 
 # Étape 2️⃣ - Préparation des données
 
