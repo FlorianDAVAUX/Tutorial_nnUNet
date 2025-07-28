@@ -15,7 +15,8 @@
 
 # Étape 0️⃣ – Téléchargement du depôt
 
-Premièremeent il faut télécharger ce dépot : https://github.com/FlorianDAVAUX/SlicerLungSegmentation
+Premièrement il faut télécharger ce dépot : [LungSegmentation](https://github.com/FlorianDAVAUX/SlicerLungSegmentation)
+
 
 # Étape 1️⃣ - Organisation des données
 
