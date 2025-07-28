@@ -36,7 +36,7 @@ Avant d’utiliser nnU-Net, il faut que les masques de segmentation soient bien 
 ⚠️ le label 0 correspond au background (obligatoire pour nnU-Net)  
 
 Pour réaliser la partie background, il faut aller dans la section *Data* de 3D Slicer puis, clique droit sur le masque et cliquer sur *Export visible segments to binary label map*.    
-Une fois cela fait, aller dans la section *Segment editor* et dans *Source Volume*, chargé ce nouveau masque binaire qui vient dêtre généré :      
+Une fois cela fait, aller dans la section *Segment editor* et dans *Source Volume*, charger ce nouveau masque binaire qui vient dêtre généré :      
 <p align="center">
   <img src="Images/exemple_masque.png" alt="masque" width="500"/>
 </p>  
@@ -46,7 +46,7 @@ Pour finir, renommer ce nouveau segment *background*.
 
 ---
 # Étape 1️⃣ - Organisation des données
-La première étape une fois que nnUNet est clôné et compilé est l'organisation des données afin de respecter le schéma souhaité par nnUNet. Il faut créer 3 dossiers :
+La première étape, une fois que nnUNet est clôné et compilé, est l'organisation des données afin de respecter le schéma souhaité par nnUNet. Il faut créer 3 dossiers :
 ```
 3D_UNet
 └── nnUNet_results/
@@ -60,22 +60,22 @@ La première étape une fois que nnUNet est clôné et compilé est l'organisati
 nnUNet_raw/  
 └── DatasetXXX_name/  
     ├── imagesTr/  
-    │   ├── 001_0000.nrrd  # images de training   
+    │   ├── 001_0000.nrrd   # images de training   
     │   ├── 002_0000.nrrd
     │   ├── ...
     ├── labelsTr/  
-    │   ├── 001.nrrd       # masques de 3D Slicer  
+    │   ├── 001.nrrd        # masques de 3D Slicer  
     │   ├── 002.nrrd
     │   ├── ...
     ├── imagesTs/  
-    │   ├── 008.nrrd       # images de test  
+    │   ├── 008.nrrd        # images de test  
     │   ├── 009.nrrd
     │   ├── ...
-    ├── dataset.json       # fichier de configuration
+    ├── dataset.json        # fichier de configuration
 ```
 
 ⚠️ Le nom du couple image/masque est important. Exemple : l'image 001_0000.nrrd doit être associée au masque 001.nrrd.  
-⚠️ L'extension **.nnrd** est importante. Il est possible de converitr une image DICOM en .nrrd en la chargant dans 3D SLicer et en exportant l'image, de choisir l'extension souhaitée.   
+⚠️ L'extension **.nnrd** est importante. Il est possible de convertir une image DICOM en .nrrd en la chargant dans 3D Slicer et en exportant l'image, de choisir l'extension souhaitée.   
 ⚠️ La séparation entre images de training et images de test se fait avec un ratio de 80/20% pour maximiser les performances.
 
 ## Écriture du fichier de configuration :
@@ -121,19 +121,22 @@ nnUNet_raw/
 - **training** : liste des couples image/masque du dataset
 - **test** : liste des images présentes dans imagesTs
 - **channel_names** : laisser *CT* pour les images du SPCCT
-- **file_ending** : laisser *.nrrd" si les images sonts exportés en *.nrrd*
+- **file_ending** : laisser *.nrrd" si les images sont au format *.nrrd*
 
 ---
 # Étape 2️⃣ - Préparation des données
-⚠️ **AVANT** de continuer, il faut **export** les chemins vers ces dossiers dans l'environement qui va executer la commande pour effectuer le preprocessing.  
-export nnUNet_raw="path/to/nnUNet_raw"
-export nnUNet_preprocessed="path/to/nnUNet_preprocessed"
-export nnUNet_results="path/to/nnUNet_results"
+⚠️ **AVANT** de continuer, il faut **export** les chemins vers **nnUNet_raw, nnUNet_preprocessed, nnUNet_results** dans l'environement qui va executer la commande que vous allez executer pour la suite de cette façon :
 
-Une fois que les données sont organisées de la bonne façon. Il faut executer un script **correct.py** qui permet de corriger le nom et le numéro des classes.  
+```
+export nnUNet_raw="path/to/nnUNet_raw"  
+export nnUNet_preprocessed="path/to/nnUNet_preprocessed"  
+export nnUNet_results="path/to/nnUNet_results"  
+```
+
+Une fois que les données sont organisées de la bonne façon. Il faut executer un script **correct.py** qui permet de corriger le nom et le label des classes.  
 Comme évoqué précédemment, background **DOIT** avoir le label 0. Ensuite, l'ordre des classes n'importe pas.  
 
-Le script **correct.py** permet de faire cela :
+Le script **correct.py** permet de faire cela et s'utilise de cette façon :
 ```
 python3 correct.py --h
 usage: correct.py [-h] --images_dir IMAGES_DIR --labels_dir LABELS_DIR --classes CLASSES [CLASSES ...]
@@ -148,6 +151,7 @@ optional arguments:
                         Chemin vers le dossier des labels
   --classes CLASSES [CLASSES ...]
                         Liste des classes utilisées dans le mapping
+```
 
 - **images_dir** : le chemin vers les images qui vont être utilisées pour le training (avec le bon label pour chaque image ex: 001_0000.nrrd, ....)  
 - **labels_dir** : le chemin vers les masques qui vont  être utilisés pour le training (avec le bon label pour chaque image ex: 001.nrrd, ....)  
@@ -158,7 +162,6 @@ python3 correct.py --images_dir /path/to/images --labels_dir /path/to/masks --cl
 
 
 Une fois que le script a été executé, on peut passer au preprocessing  
-```
 
 ---
 # Étape 3️⃣ - Preprocessing des données
