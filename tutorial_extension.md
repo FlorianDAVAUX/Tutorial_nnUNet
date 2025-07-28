@@ -3,9 +3,10 @@
 
 ## 📚 Sommaire
 
-- [Étape 0️⃣ – Téléchargement du dépôt](#étape-0️⃣--téléchargement-du-dépôt)
+- [Étape 0️⃣ – Telechargement du depot](#étape-0️⃣--téléchargement-du-depôt)
 - [Étape 1️⃣ - Intégration dans 3D Slicer](#étape-1️⃣---intégration-dans-3d-slicer)
 - [Étape 2️⃣ - Ouverture dans 3D Slicer](#étape-2️⃣---ouverture-dans-3d-slicer)
+
 ---
 
 # Étape 0️⃣ – Téléchargement du depôt
