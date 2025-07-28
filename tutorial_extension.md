@@ -3,14 +3,10 @@
 
 ## 📚 Sommaire
 
-- [Étape 0️⃣ – Préparation des masques](#étape-0️⃣--préparation-des-masques)
-- [Étape 1️⃣ - Organisation des données](#étape-1️⃣---organisation-des-données)
-- [Étape 2️⃣ - Préparation des données](#étape-2️⃣---préparation-des-données)
-- [Étape 3️⃣ - Preprocessing des données](#étape-3️⃣---preprocessing-des-données)
-- [Étape 4️⃣ - Entraînement sur cluster](#étape-4️⃣---entraînement-sur-cluster)
-- [Étape 5️⃣ - Prédiction sur les images de test](#étape-5️⃣---prédiction-sur-les-images-de-test)
-- [Étape 6️⃣ - Utilisation sur de nouvelles images](#étape-6️⃣---utilisation-sur-de-nouvelles-images)
-
+- [Étape 0️⃣ – Téléchargement du dépôt](#étape-0️⃣--téléchargement-du-dépôt)
+- [Étape 1️⃣ - Intégration dans 3D Slicer](#étape-1️⃣---intégration-dans-3d-slicer)
+- [Étape 2️⃣ - Ouverture dans 3D Slicer](#étape-2️⃣---ouverture-dans-3d-slicer)
+- 
 ---
 
 # Étape 0️⃣ – Téléchargement du depôt
@@ -29,14 +25,12 @@ Une fois que l'extension est téléchargée il faut l'intégrer dans 3D Slicer :
 - Ouvrir **Application settings**
 - Cliquer sur **Module** et obeserver l'élément **Additional module paths:** de cet onglet
 - Ajouter dans module le chemin vers **LungSegmentation**  
-Il faut ajouter le chemin vers le dossier **LungSegmentation**, pas le chemin vers l'extension complète **SlicerLungSegmentation**
+⚠️ Il faut ajouter le chemin vers le dossier **LungSegmentation**, pas le chemin vers l'extension complète **SlicerLungSegmentation**.
+- Relancer **3D Slicer**
 
-# Étape 2️⃣ - Préparation des données
+---
 
-# Étape 3️⃣ - Preprocessing des données
+# Étape 2️⃣ - Ouverture dans 3D Slicer
 
-# Étape 4️⃣ - Entraînement sur cluster
-
-# Étape 5️⃣ - Prédiction sur les images de test
-
-# Étape 6️⃣ - Utilisation sur de nouvelles images
+Une fois que vous relancez 3D Slicer, vous pouver ouvrir le menu **Modules** puis dans **Segmentation** vous devriez avoir l'extension **LungSegmentation**.  
+Une fois l'extension disponible, la documentation pour l'utilisation est disponible dans le README.md de [LungSegmentation](https://github.com/FlorianDAVAUX/SlicerLungSegmentation).  
