@@ -3,7 +3,7 @@
 
 ## 📚 Sommaire
 
-- [Étape 0️⃣ – Telechargement du depot](#étape-0️⃣--téléchargement-du-depôt)
+- [Étape 0️⃣ – Téléchargement du depot](#étape-0️⃣--téléchargement-du-depôt)
 - [Étape 1️⃣ - Intégration dans 3D Slicer](#étape-1️⃣---intégration-dans-3d-slicer)
 - [Étape 2️⃣ - Ouverture dans 3D Slicer](#étape-2️⃣---ouverture-dans-3d-slicer)
 
@@ -20,7 +20,7 @@ git clone https://github.com/FlorianDAVAUX/SlicerLungSegmentation.git
 # Étape 1️⃣ - Intégration dans 3D Slicer
 
 Une fois que l'extension est téléchargée il faut l'intégrer dans 3D Slicer :
-- Ouvrir **3D SLicer**
+- Ouvrir **3D Slicer**
 - Ouvrir **Edit**
 - Ouvrir **Application settings**
 - Cliquer sur **Module** et observer l'élément **Additional module paths:** de cet onglet
